@@ -93,7 +93,15 @@ DATABASES = {
 }
 
 
+# Set environment variables
+os.environ['DATABASE_URL'] = 'your_database_connection_string'
+os.environ['SECRET_KEY'] = 'your_secret_key'
+
+# Access environment variables
 database_url = os.environ.get('DATABASE_URL')
+secret_key = os.environ.get('SECRET_KEY')
+
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
