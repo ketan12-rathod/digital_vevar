@@ -93,14 +93,6 @@ DATABASES = {
 }
 
 
-# Set environment variables
-os.environ['DATABASE_URL'] = 'your_database_connection_string'
-os.environ['SECRET_KEY'] = 'your_secret_key'
-
-# Access environment variables
-database_url = os.environ.get('DATABASE_URL')
-secret_key = os.environ.get('SECRET_KEY')
-
 
 
 # Password validation
@@ -149,18 +141,3 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# settings.py
-
-# ...
-
-AWS_ACCESS_KEY_ID = 'your-aws-access-key-id'
-AWS_SECRET_ACCESS_KEY = 'your-aws-secret-access-key'
-AWS_STORAGE_BUCKET_NAME = 'your-s3-bucket-name'
-AWS_S3_REGION_NAME = 'your-region'  # e.g., us-east-1
-AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
-
-# Use Amazon S3 for storage for uploaded media files.
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-
-# Static files (CSS, JavaScript, images)
-STATIC_URL = 'https://%s/' % AWS_S3_CUSTOM_DOMAIN
