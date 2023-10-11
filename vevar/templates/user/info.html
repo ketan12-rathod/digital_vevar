@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Social Login widget Flat Responsive Widget Template :: w3layouts</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Social Login widget template Responsive, Login form web template,Flat Pricing tables,Flat Drop downs  Sign up Web Templates, Flat Web Templates, Login sign up Responsive web template, SmartPhone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- Custom Theme files -->
+<link href="{% static 'user/info/css/style.css'%}" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" href="{% static 'user/info/css/font-awesome.css'%}"> <!-- Font-Awesome-Icons-CSS -->
+<!-- //Custom Theme files -->
+<!-- web font --> 
+<link href="//fonts.googleapis.com/css?family=Josefin+Sans:100,100i,300,300i,400,400i,600,600i,700,700i&amp;subset=latin-ext" rel="stylesheet">
+<!-- //web font -->
+</head>
+<body>
+	<center>
+		{% if messages %}
+		<ul class="messages">
+			{% for message in messages %}
+			<li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+				{% endfor %}
+		</ul>
+		{% endif %}
+	</center>
+	<!-- main -->
+	<div class="main-agileits">
+		<h1>Couple's name</h1> 
+		<div class="mainw3-agileinfo form">
+			<div class="contact-w3left">  
+				<img src="{% static 'user/info/images/3.png'%}" alt=" ">
+			</div>
+			<div class="contact-grid agileits"> 
+				<form action="/user/store_info" method="post"> 
+                    {% csrf_token %}
+					<div class="w3ls-icon">
+						<i class="fa fa-user" aria-hidden="true"></i>
+						<input type="text" id="Name" name="Name" placeholder="User name" required="">
+					</div>
+                    <div class="w3ls-icon">
+						<i class="fa fa-user" aria-hidden="true"></i>
+						<input type="password" id="gName" name="gName" placeholder="password" required="">
+					</div>
+					<div class="">
+						<input type="submit" value="Submit">
+					</div>
+					<!-- <div class="social-wthree-icons bnragile-icons">
+						<p>Or</p>
+						<ul>
+							<li><a href="#" class="fa fa-facebook icon icon-border facebook"> </a></li>
+							<li><a href="#" class="fa fa-twitter icon icon-border twitter"> </a></li>
+							<li><a href="#" class="fa fa-google-plus icon icon-border googleplus"> </a></li>
+							<li><a href="#" class="fa fa-dribbble icon icon-border dribbble"> </a></li> 
+						</ul>
+						<div class="clearfix"> </div>
+					</div> -->
+				</form> 
+			</div>
+		</div>	
+	</div>	
+	<!-- //main -->
+	<!-- copyright -->
+	<div class="w3copyright-agile">
+		<h2>© 2017 Social Login Widget. All rights reserved | Design by <a href="http://w3layouts.com/" target="_blank">W3layouts</a></h2>
+	</div>
+	<!-- //copyright -->   
+</body>
+</html>

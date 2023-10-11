@@ -1,0 +1,297 @@
+{% load static %}
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Musico</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <link rel="manifest" href="site.webmanifest"> -->
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'user/all/img/favicon.png'%}">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="{% static 'user/all/css/bootstrap.min.css'%}">
+    <link rel="stylesheet" href="{% static 'user/all/css/owl.carousel.min.css'%}">
+    <link rel="stylesheet" href="{% static 'user/all/css/magnific-popup.css'%}">
+    <link rel="stylesheet" href="{% static 'user/all/css/font-awesome.min.css'%}">
+    <link rel="stylesheet" href="{% static 'user/all/css/themify-icons.css'%}">
+    <link rel="stylesheet" href="{% static 'user/all/css/nice-select.css'%}">
+    <link rel="stylesheet" href="{% static 'user/all/css/flaticon.css'%}">
+    <link rel="stylesheet" href="{% static 'user/all/css/gijgo.css'%}">
+    <link rel="stylesheet" href="{% static 'user/all/css/animate.css'%}">
+    <link rel="stylesheet" href="{% static 'user/all/css/slicknav.css'%}">
+    <link rel="stylesheet" href="{% static 'user/all/css/style.css'%}">
+    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+</head>
+
+<body>
+
+    <header>
+        <div class="header-area ">
+            <div id="sticky-header" class="main-header-area">
+                <div class="container-fluid">
+                    <div class="header_bottom_border">
+                        <div class="row align-items-center">
+                            <div class="col-xl-3 col-lg-2">
+                                <div class="logo">
+                                    <a href="index.html">
+                                        <img src="img/logo.png" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-7">
+                                <div class="main-menu  d-none d-lg-block">
+                                    <nav>
+                                        <ul id="navigation">
+                                            <li><a class="active" href="/user/index/{{girl_name}}/{{boy_name}}/">home</a></li>
+                                            <!-- <li><a href="about.html">About</a></li>
+                                            <li><a href="track.html">tracks</a></li> -->
+                                            <li><a href="#">oredered <i class="ti-angle-down"></i></a>
+                                                <ul class="submenu">
+                                                    <li><a href="/user/all_name/{{girl_name}}/{{boy_name}}/">all name</a></li>
+                                                    <li><a href="/user/name">add new vevar</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="#">pages <i class="ti-angle-down"></i></a>
+                                                <ul class="submenu">
+                                                     <li><a href="elements.html">elements</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="contact.html">Contact</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="mobile_menu d-block d-lg-none"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="bradcam_area breadcam_bg_2">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="bradcam_text text-center">
+                        <h3>All Vevar</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ bradcam_area  -->
+
+
+    <!-- Start Align Area -->
+    <div class="whole-wrap">
+        <div class="container box_1170">
+            <div class="section-top-border">
+                <h3 class="mb-30">All Vevar</h3>
+                <div class="progress-table-wrap">
+                    <!-- Search input field -->
+                    <input type="text" id="searchInput" placeholder="Search by Name or Village">
+
+                    <div class="progress-table">
+                        <div class="table-head">
+                            <div class="percentage" style="padding-left: 10px;">Boy Name</div>
+                            <div class="country">Girl Name</div>
+                            <div class="percentage">Date</div>
+                            <div class="visit">Vevar</div>
+                            
+
+                        </div>
+                        {% for row in result %}
+                        <div class="table-row">
+                            <div class="percentage" style="padding-left: 10px;">{{row.boy_name}}</div>
+                            <div class="country">{{row.girl_name}}</div>
+                            <div class="visit">{{row.date}}</div>
+                            <div class="visit"><a href="/user/all_vevar/{{row.id}}/{{row.boy_name}}/{{row.girl_name}}/">Vevar</a></div>
+                            
+                        </div>
+                        {% endfor %}
+                        
+                    </div>
+                    <p style="float: left;" class="text-white bg-dark">Total Vevar-- {{total_sum}}</p>
+
+                        <p style="float: right;"><a style="text-align: center; color:red" href="/user/index/{{girl_name}}/{{boy_name}}/">Go to Add Vevar--></a>
+                        </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- End Align Area -->
+
+    <!-- footer start -->
+    <footer class="footer">
+        <div class="footer_top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6 col-md-6">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Services
+                            </h3>
+                            <div class="subscribe-from">
+                                <form action="#">
+                                    <input type="text" placeholder="Enter your mail">
+                                    <button type="submit">Subscribe</button>
+                                </form>
+                            </div>
+                            <p class="sub_text">Esteem spirit temper too say adieus who direct esteem esteems luckily.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-xl-5 col-md-5 offset-xl-1">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Contact Me
+                            </h3>
+                            <ul>
+                                <li><a href="#">conbusi@support.com
+                                    </a></li>
+                                <li><a href="#">+10 873 672 6782
+                                    </a></li>
+                                <li><a href="#">600/D, Green road, Kings Garden NewYork-6732</a></li>
+                            </ul>
+                            <div class="socail_links">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <i class=" fa fa-facebook "></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-google-plus"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-twitter"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-youtube-play"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-instagram"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copy-right_text">
+            <div class="container">
+                <div class="footer_border"></div>
+                <div class="row">
+                    <div class="col-xl-7 col-md-6">
+                        <p class="copy_right">
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy;
+                            <script>document.write(new Date().getFullYear());</script> All rights reserved | This
+                            template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a
+                                href="https://colorlib.com" target="_blank">Colorlib</a>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </p>
+                    </div>
+                    <div class="col-xl-5 col-md-6">
+                        <div class="footer_links">
+                            <ul>
+                                <li><a href="#">home</a></li>
+                                <li><a href="#">about</a></li>
+                                <li><a href="#">tracks</a></li>
+                                <li><a href="#">blog</a></li>
+                                <li><a href="#">contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--/ footer end  -->
+
+    <!-- JS here -->
+    <script src="{% static 'user/all/js/vendor/modernizr-3.5.0.min.js'%}"></script>
+    <script src="{% static 'user/all/js/vendor/modernizr-3.5.0.min.js'%}"></script>
+    <script src="{% static 'user/all/js/vendor/jquery-1.12.4.min.js'%}"></script>
+    <script src="{% static 'user/all/js/popper.min.js'%}"></script>
+    <script src="{% static 'user/all/js/bootstrap.min.js'%}"></script>
+    <script src="{% static 'user/all/js/owl.carousel.min.js'%}"></script>
+    <script src="{% static 'user/all/js/isotope.pkgd.min.js'%}"></script>
+    <script src="{% static 'user/all/js/ajax-form.js'%}"></script>
+    <script src="{% static 'user/all/js/waypoints.min.js'%}"></script>
+    <script src="{% static 'user/all/js/jquery.counterup.min.js'%}"></script>
+    <script src="{% static 'user/all/js/imagesloaded.pkgd.min.js'%}"></script>
+    <script src="{% static 'user/all/js/scrollIt.js'%}"></script>
+    <script src="{% static 'user/all/js/jquery.scrollUp.min.js'%}"></script>
+    <script src="{% static 'user/all/js/wow.min.js'%}"></script>
+    <script src="{% static 'user/all/js/nice-select.min.js'%}"></script>
+    <script src="{% static 'user/all/js/jquery.slicknav.min.js'%}"></script>
+    <script src="{% static 'user/all/js/jquery.magnific-popup.min.js'%}"></script>
+    <script src="{% static 'user/all/js/plugins.js'%}"></script>
+    <script src="{% static 'user/all/js/gijgo.min.js'%}"></script>
+
+    <!--contact js-->
+    <script src="{% static 'user/all/js/contact.js'%}"></script>
+    <script src="{% static 'user/all/js/jquery.ajaxchimp.min.js'%}"></script>
+    <script src="{% static 'user/all/js/jquery.form.js'%}"></script>
+    <script src="{% static 'user/all/js/jquery.validate.min.js'%}"></script>
+    <script src="{% static 'user/all/js/mail-script.js'%}"></script>
+
+    <script src="{% static 'user/all/js/main.js'%}"></script>
+    <script src="{% static 'user/all/js/main.js'%}"></script>
+
+    <script>
+        $('#searchInput').on('input', function () {
+            var searchText = $(this).val().toLowerCase();
+            $('.table-row').each(function () {
+                var nameText = $(this).find('.percentage').text().toLowerCase(); // Get the name text
+                var villageText = $(this).find('.country').text().toLowerCase(); // Get the village text
+                if (nameText.includes(searchText) || villageText.includes(searchText)) {
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
+            });
+        });
+        
+    </script>
+    
+    
+    
+    <script>
+        $('#datepicker').datepicker({
+            iconsLibrary: 'fontawesome',
+            icons: {
+                rightIcon: '<span class="fa fa-caret-down"></span>'
+            }
+        });
+        $('#datepicker2').datepicker({
+            iconsLibrary: 'fontawesome',
+            icons: {
+                rightIcon: '<span class="fa fa-caret-down"></span>'
+            }
+
+        });
+    </script>
+</body>
+
+</html>

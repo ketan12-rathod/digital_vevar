@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>SanJiya's Vevar</title>
+    <!-- Meta tag Keywords -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <!-- //Meta tag Keywords -->
+    <link href="//fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <!--/Style-CSS -->
+    <link rel="stylesheet" href="{% static 'user/css/style.css'%}" type="text/css" media="all" />
+    <!--//Style-CSS -->
+    <link rel="stylesheet" href="{% static 'user/css/font-awesome.min.css'%}" type="text/css" media="all">
+
+</head>
+
+<body>
+    <div class="w3l-signinform">
+        <!-- container -->
+        <div class="wrapper">
+            <!-- main content -->
+            <div class="w3l-form-info">
+                <div class="w3_info">
+                    <h1> ॐ श्री गणेशाय नमः |</h1>
+                    <p class="sub-para">congratulation {{myboy}} and {{mygirl}} for marriage</p>
+                    <h2>વેવાર</h2>
+                    <form action="/user/store_vevar" method="post" >
+                        {% csrf_token %}
+                        <div class="input-group">
+                            <span><i class="fa fa-user" aria-hidden="true"></i></span>
+                            <input type="text" id="name" name="name" placeholder="નામ" required="">
+                        </div>
+                        <input type="hidden" name="result_id" value="{{ result_id }}">
+                        <input type="hidden" name="myboy" value="{{ myboy }}">
+                        <input type="hidden" name="mygirl" value="{{ mygirl }}">
+
+                        <div class="input-group">
+                            <span><i class="fa fa-user" aria-hidden="true"></i></span>
+                            <input type="text" id="village" name="village" placeholder="ગામનું નામ" required="">
+                        </div>
+                        <div class="input-group">
+                            <span><i class="fa fa-user" aria-hidden="true"></i></span>
+                            <input type="text" id="vevar" name="vevar" placeholder="વેવાર" required="">
+                        </div>
+                        <br>
+                        <div class="form-row bottom" style="float: right;">
+                            
+                            <a href="/user/all_vevar/{{result_id}}/{{myboy}}/{{mygirl}}" class="forgot" >All Vevar</a>
+                        </div>
+                        <br>
+                        <button class="btn btn-primary btn-block" type="submit">Submit</button>
+                    </form>
+                
+                    
+                </div>
+            </div>
+            <!-- //main content -->
+        </div>
+        <!-- //container -->
+        
+    </div>
+
+</body>
+
+</html>
