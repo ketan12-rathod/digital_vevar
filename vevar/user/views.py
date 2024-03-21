@@ -146,3 +146,4 @@ def all_name(request, boy_name, girl_name):
             'boy_name': boy_name
             }
     return render(request,'user/all_name.html',context)
+

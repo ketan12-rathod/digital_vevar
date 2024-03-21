@@ -30,4 +30,5 @@ urlpatterns = [
     path('store_name', views.store_name, name='store_name'),
     path('all_name/<str:girl_name>/<str:boy_name>/', views.all_name, name='all_name'),
     
+    
 ]
